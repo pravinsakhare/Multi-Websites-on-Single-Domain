@@ -99,9 +99,35 @@ sudo a2ensite site3.conf
 ```
 **sudo systemctl restart apache2**
 
-**design your website as you want here is one example**
+### 6.	Configure the Security Group for inbound rules:
+
+![Screenshot (96)](https://github.com/user-attachments/assets/e70ef66b-51c3-470b-9568-fb8a13d7e02a)
+
+
+**.Create simple index.html file**
 
 ![Screenshot (93)](https://github.com/user-attachments/assets/56210555-3982-444c-bf00-47cdd506c895)
+
+```bash
+echo "<h1>Welcome to Site 1</h1>" | sudo tee /var/www/site1/public_html/index.html
+```
+```bash
+echo "<h1>Welcome to Site 2</h1>" | sudo tee /var/www/site2/public_html/index.html
+```
+```bash
+echo "<h1>Welcome to Site 3</h1>" | sudo tee /var/www/site3/public_html/index.html
+```
+### Udated Html Code (extra)
+![image](https://github.com/user-attachments/assets/f1fe8915-7810-4007-a081-7f4ae96d6543)
+
+### Launch your multiple websites using port public ip address & port numbers:
+
+![Screenshot (102)](https://github.com/user-attachments/assets/e8554f32-2e61-4b01-af24-aa5ad8e3ba5b)
+
+
+
+
+
 
 
 
