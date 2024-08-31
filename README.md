@@ -59,14 +59,60 @@ sudo mkdir -p /var/www/site3/public_html
 **•	Assign ownership to the www-data user:**
 ```bash
 sudo chown -R www-data:www-data /var/www/site1/public_html
+```
 ```bash
 sudo chown -R www-data:www-data /var/www/site2/public_html
+```
 ```bash
 sudo chown -R www-data:www-data /var/www/site3/public_html
 ```
 ```bash
 sudo nano /etc/apache2/sites-available/site1.conf
 ```
+**Open nano editor and add this script for all three files just change virtualhost to 8081,8082 for other**
+```
+<VirtualHost *:8080>
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/site1/public_html
+
+    ErrorLog ${APACHE_LOG_DIR}/site1_error.log
+    CustomLog ${APACHE_LOG_DIR}/site1_access.log combined
+
+    <Directory /var/www/site1/public_html>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+```
+![image](https://github.com/user-attachments/assets/4b687d9a-3df3-4da6-8681-86d72a3ed89e)
+
+**Enable the sites:**
+```bash
+sudo a2ensite site1.conf
+```
+```bash
+sudo a2ensite site2.conf
+```
+```bash
+sudo a2ensite site3.conf
+```
+**sudo systemctl restart apache2**
+
+**design your website as you want here is one example**
+
+![Screenshot (93)](https://github.com/user-attachments/assets/56210555-3982-444c-bf00-47cdd506c895)
+
+
+
+
+
+
+
+
+
+
+
 
  
 
